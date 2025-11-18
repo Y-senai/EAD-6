@@ -19,8 +19,11 @@ public abstract class Lutador {
 
     abstract public void especial(Lutador Oponente);
 
-    public void defender(Lutador Oponente) {
-        this.vida-=(Oponente.forca);
+    public void defender(Lutador Oponente){
+        if(this.vida - Oponente.forca < 0){
+            this.vida -=20;
+        }
+        this.vida-= Oponente.forca-=20;
     }
 
     public void mostrarStatus(){

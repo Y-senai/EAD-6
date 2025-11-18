@@ -11,9 +11,18 @@ public class Main {
         LutadorMedio[] Medios = new LutadorMedio[20];
         LutadorPesado[] Pesados = new LutadorPesado[20];
 
-        menu.cadastrarJogador(Leves,Medios,Pesados);
-        menu.cadastrarJogador(Leves,Medios,Pesados);
-        menu.mostrarLutadores(Leves,Medios,Pesados);
+        Leves[0] = new LutadorLeve("Rastad");
+        Medios[0] = new LutadorMedio("Ryu");
+        Pesados[0] = new LutadorPesado("Alex");
+
+        int opt=menu.menuInicial();
+        switch(opt){
+            case 1:
+                menu.CombateBot(Leves[0],Medios[0]);
+            case 4:
+                System.exit(0);
+        }
+
 
     }
 }

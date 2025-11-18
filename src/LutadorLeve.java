@@ -1,6 +1,6 @@
 public class LutadorLeve extends Lutador{
     public LutadorLeve(String nome){
-        super(nome,80,120,18);
+        super(nome,80,120,16);
     }
 
     @Override
