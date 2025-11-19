@@ -1,11 +1,9 @@
-import java.io.IOException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
     Scanner sc = new Scanner(System.in);
 
-    public void mostrarLutadores(Lutador lutador1,Lutador lutador2){
+    public void mostrarLutadores(Lutador lutador1, Lutador lutador2){
         lutador1.mostrarStatus();
         System.out.println();
         System.out.println("==================================");
@@ -71,12 +69,13 @@ public class Menu {
         }
     }
 
-    public void mostrarLutadores(LutadorLeve[] leves,LutadorMedio[] medios,LutadorPesado[] pesados){
+    public void mostrarListaLutadores(LutadorLeve[] leves, LutadorMedio[] medios, LutadorPesado[] pesados){
         System.out.println("========= LUTADORES LEVES =========");
         for(int i = 0;i<leves.length;i++){
             if(leves[i]==null){
                 break;
             }
+            System.out.println(" ====== LUTADOR " + (i+1) + " ======");
             leves[i].mostrarStatus();
             System.out.println("===========================");
         }
@@ -85,6 +84,7 @@ public class Menu {
             if(medios[i]==null){
                 break;
             }
+            System.out.println(" ====== LUTADOR " + (i+1) + " ======");
             medios[i].mostrarStatus();
             System.out.println("===========================");
         }
@@ -93,6 +93,7 @@ public class Menu {
             if(pesados[i]==null){
                 break;
             }
+            System.out.println(" ====== LUTADOR " + (i+1) + " ======");
             pesados[i].mostrarStatus();
             System.out.println("===========================");
         }
@@ -149,7 +150,7 @@ public class Menu {
                 lutador.especial(lutadorAlvo);
                 break;
             case 3:
-                lutador.defender(lutadorAlvo);
+                lutador.defender();
                 break;
         }
     }
@@ -164,7 +165,7 @@ public class Menu {
                 lutador.especial(lutadorAlvo);
                 break;
             case 3:
-                lutador.defender(lutadorAlvo);
+                lutador.defender();
                 break;
         }
     }
@@ -206,5 +207,11 @@ public class Menu {
             System.out.flush();
         }
     }
+
+
+    //public Lutador escolherLutador(LutadorLeve[] leves, LutadorMedio[] medios, LutadorPesado[] pesados){
+      //  mostrarListaLutadores(leves, medios, pesados);
+        //System.out.println("Escolha o número do lutador que você deseja: ");
+    //}
 
 }

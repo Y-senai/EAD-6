@@ -8,6 +8,8 @@ public abstract class Lutador {
 
     int forca;
 
+    boolean defesa=false;
+
     public Lutador(String nome, int vida, int energia, int forca) {
         this.nome = nome;
         this.vida = vida;
@@ -19,11 +21,14 @@ public abstract class Lutador {
 
     abstract public void especial(Lutador Oponente);
 
-    public void defender(Lutador Oponente){
-        if(this.vida - Oponente.forca < 0){
-            this.vida -=20;
+    public void defender(){
+        this.defesa=true;
+    }
+
+    public void verificarVida(){
+        if(this.vida<0){
+            this.vida=0;
         }
-        this.vida-= Oponente.forca-=20;
     }
 
     public void mostrarStatus(){
@@ -34,6 +39,6 @@ public abstract class Lutador {
     }
 
     public boolean estaVivo(){
-        return (this.vida>=0);
+        return (this.vida>0);
         }
 }

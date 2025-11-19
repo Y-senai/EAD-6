@@ -7,20 +7,27 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        LutadorLeve[] Leves = new LutadorLeve[20];
-        LutadorMedio[] Medios = new LutadorMedio[20];
-        LutadorPesado[] Pesados = new LutadorPesado[20];
+        LutadorLeve[] leves = new LutadorLeve[20];
+        LutadorMedio[] medios = new LutadorMedio[20];
+        LutadorPesado[] pesados = new LutadorPesado[20];
 
-        Leves[0] = new LutadorLeve("Rastad");
-        Medios[0] = new LutadorMedio("Ryu");
-        Pesados[0] = new LutadorPesado("Alex");
+        leves[0] = new LutadorLeve("Rastad");
+        medios[0] = new LutadorMedio("Ryu");
+        pesados[0] = new LutadorPesado("Zangief");
 
+
+        menu.mostrarListaLutadores(leves,medios,pesados);
         int opt=menu.menuInicial();
         switch(opt){
             case 1:
-                menu.CombateBot(Leves[0],Medios[0]);
+                menu.CombateBot(leves[0],medios[0]);
+                break;
+            case 2:
+                menu.Combate(leves[0],pesados[0]);
+                break;
             case 4:
                 System.exit(0);
+                break;
         }
 
 
